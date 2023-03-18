@@ -1,35 +1,40 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String ingilizce =null;
         String turkce=null;
         boolean dongu = true;
-        Quiz kelime = new Quiz(ingilizce,turkce);
-
-      while(dongu){
-          System.out.println("İngilizce/Türkçe kelimeleri sırasıyla giriniz..");
-          Scanner scan = new Scanner(System.in);
-          ingilizce= scan.next();
-          if(ingilizce.equals("q") || ingilizce.equals("Q")){
-              dongu = false;
-              break;
-          }
-          turkce= scan.next();
-          if( turkce.equals("q") ||  turkce.equals("Q") ){
-              dongu = false;
-              break;
-          }
-
-          kelime.kelimeler.put(ingilizce,turkce);
 
 
-      }
+        while(dongu){
+            System.out.println("İngilizce/Türkçe kelimeleri sırasıyla giriniz..");
+            Scanner scan = new Scanner(System.in);
+            ingilizce= scan.next();
+            String temp = ingilizce;
+            if(ingilizce.equals("q") || ingilizce.equals("Q")){
+                ingilizce=temp;
+                dongu = false;
+                break;
+            }
+            turkce= scan.next();
+            temp = turkce;
+            if( turkce.equals("q") ||  turkce.equals("Q") ){
+                turkce=temp;
+                dongu = false;
+                break;
+            }
+
+        }
+
+        Word kelime = new Word(ingilizce,turkce);
+        WordManager manager = new WordManager(new FileWordDao());
+        manager.addWord(kelime);
 
 
 
-        //System.out.println("**** QUIZ ****");
-        System.out.println(kelime.startQuiz()+" : ");
+
+        // System.out.println(kelime.startQuiz()+" : ");
 
 
     }

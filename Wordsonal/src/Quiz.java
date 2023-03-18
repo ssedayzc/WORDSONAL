@@ -3,11 +3,10 @@ import java.util.Map;
 import java.util.Random;
 
 public class Quiz {
-    private String ingKelime;
-    private String turkceKelime;
+    /*
     private int quizIndex = 0;
     Random r = new Random();
-    Map<String,String> kelimeler = new HashMap<String,String>();
+
 
     public Quiz(String ingKelime,String turkceKelime){
         this.ingKelime=ingKelime;
@@ -15,6 +14,7 @@ public class Quiz {
         kelimeler.put(this.ingKelime,this.turkceKelime);
     }
     public String startQuiz( ) {
+    //System.out.println("**** QUIZ ****");
         int i = 0;
         setQuizIndex();
         String kelime = null;
@@ -36,10 +36,10 @@ public class Quiz {
     }
 
     public void setQuizIndex() {
-        this.quizIndex = r.nextInt(kelimeler.size() + 1);
+        this.quizIndex = r.nextInt(kelimeler.size()) +1 ;
         System.out.println("random index" + quizIndex);
 
     }
 
-
+*/
 }
